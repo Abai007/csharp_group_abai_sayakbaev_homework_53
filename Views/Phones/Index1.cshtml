@@ -1,0 +1,35 @@
+﻿@model Phone
+
+@{
+    ViewBag.Title = "Phones";
+    Layout = "_Layout";
+}
+<div>
+    <table style="width: 100%;">
+        <tr>
+            <th>Наименование</th>
+            <th>Компания</th>
+            <th>Цена в USD</th>
+            <th>Цена в RUB</th>
+            <th>Цена в KZT</th>
+            <th>Цена в EUR</th>
+        </tr>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Company</td>
+            <td>@Model.Price</td>
+            @foreach (var i in ViewBag.Message)
+            {
+                <td>@i</td>
+            }
+        </tr>
+    </table>
+</div>
+<div>
+    @if (Model.ImagePhone != null)
+    {
+        <img src="@Model.ImagePhone" class="card-img-top" alt="Phone image">
+    }
+    <h5 class="card-title">О телефоне</h5>
+    <p class="card-text">@Model.Description</p>
+</div>

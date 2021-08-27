@@ -18,7 +18,7 @@
                 <th>Наименование</th>
                 <th>Компания</th>
                 <th>Стоимость</th>
-                <th>Оформить заказ</th>
+                <th>Подробная информация</th>
             </tr>
             @foreach (var phone in @Model)
             {
@@ -27,9 +27,7 @@
             <td>@phone.Name</td>
             <td>@phone.Company</td>
             <td>@phone.Price</td>
-            <td>
-                <a asp-action="Create" asp-controller="Orders" asp-route-phoneId="@phone.Id">Заказать</a>
-            </td>
+            <td><a asp-action="Index1" asp-route-id="@phone.Id">Подробнее</a></td>
         </tr>
             }
         </table>
